@@ -61,7 +61,7 @@ export type WeatherAction =
   | UpdateDataAction
   | ToggleCityVisibilityAction; 
 
-async function getCityTemperatures(cityName) {
+async function getCityTemperatures(cityName: string | number | boolean) {
     try {
         const response = await fetch(`/api/temperatures?city=${encodeURIComponent(cityName)}`);
         const data = await response.json();
